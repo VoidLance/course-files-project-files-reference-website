@@ -1,0 +1,607 @@
+/* Global & Reset Styles */
+body {
+        overflow-x: hidden;
+        background-color: #32323c;
+        font-family: "Montserrat", sans-serif;
+
+p {
+        font-size: 20px;
+        color: #e6e6e6;
+        font-family: "Montserrat", sans-serif;
+}
+
+/* Navigation Styles */
+nav {
+        background-color: rgba(27, 27, 27, 0.8);
+        padding: 1rem 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+}
+
+.nav-links {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+}
+
+.nav-links a {
+        color: #e6e6e6;
+        text-decoration: none;
+        font-weight: 700;
+        position: relative;
+}
+
+.nav-links a:hover {
+        color: #2b6289;
+}
+
+.nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 3px;
+        background: #2b6289;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+        transform: scaleX(1);
+}
+
+/* Header Section Styles */
+.container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        padding: 2rem;
+        padding-top: 60px;
+        background-image: url("images/yacht.jpg");
+        z-index: 0;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: relative;
+}
+
+/* pseudo-element class to ensure text overlay is visible over the image */
+.container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -2;
+}
+
+h1 {
+        font-size: 2.5rem;
+        color: #e6e6e6;
+        margin-bottom: 10px;
+        z-index: 1;
+}
+h2 {
+        font-size: 1.4rem;
+        color: #b0b0b8;
+        z-index: 1;
+}
+
+/* Button Styles */
+#start-tour-button {
+        margin-top: 20px;
+        z-index: 1;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+button {
+        text-transform: uppercase;
+        position: relative;
+        border: none;
+        font-size: 18px;
+        transform: 0.2s;
+        background-color: transparent;
+        outline: none;
+        border-radius: 3px;
+        margin: 0 10px;
+        padding: 23px 33px;
+        border: 3px solid transparent;
+        width: 100%;
+        color: #e6e6e6;
+        cursor: pointer;
+        align-content: center;
+}
+
+button:active {
+        transform: translate(3px);
+}
+
+button::after,
+button::after {
+        border-radius: 3px;
+}
+
+.shrink-border {
+        transition: opacity 0.3s, border 0.3s;
+}
+
+.shrink-border:hover:before {
+        opacity: 0;
+}
+
+.shrink-border::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        border: 3px solid #e6e6e6;
+        opacity: 0;
+        z-index: -1;
+        transform: scaleX(1.1) scaleY(1.3);
+        transition: transform 0.3s, opacity 0.3s;
+}
+
+.shrink-border:hover::after {
+        opacity: 1;
+        transform: scaleX(1) scaleY(1);
+}
+
+/* Main Content Styles */
+
+/* main {
+        /* Add main content styles here if needed */
+/* } */
+#discovery {
+        border: 2px outset #a7d8fa;
+        padding: 10px;
+        padding: 60px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        color: #e6e6e6;
+        background-color: #4040473b;
+        border-radius: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        margin-bottom: 20px;
+        margin-top: 20px;
+}
+
+
+#images {
+        border: 10px outset #a7e77e;
+        padding: 10px;
+}
+
+/* Gallery Page Styles */
+/* Add gallery-specific styles below */
+
+#gallery-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+        padding-top: 20px;
+        min-height: 60vh;
+        color: #e6e6e6;
+        background-color: #a0a0b33b;
+        border-radius: 16px;
+        width: 60%;
+        align-items: center;
+        margin: 120px auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+
+}
+
+.gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+        width: 80%;
+        margin-top: 20px;
+        margin-bottom: 40px;
+}
+
+.gallery-item {
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
+        padding: 0 !important;
+        margin: 0 !important;
+        border-radius: 12px;
+        aspect-ratio: 4 / 3;
+}
+
+.gallery-item img {
+        width: 100% !important;
+        height: 100% !important;
+        display: block;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        box-sizing: border-box;
+        padding: 0 !important;
+        margin: 0 !important;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        /* no border-radius here; image fills container */
+}
+
+figcaption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 14px;
+        text-align: center;
+        border-radius: 0 0 12px 12px;
+        margin: auto;
+        /* opacity: 0; */
+        /* transition: opacity 0.3s ease; */
+}
+
+/* .gallery-item:hover figcaption {
+        opacity: 1;
+} */
+
+/* Contact Page Styles */
+
+/* Contact Page Styles */
+.contact-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        padding: 5px;
+        padding-top: 20px;
+        color: #e6e6e6;
+        background-color: #a0a0b33b;
+        border-radius: 16px;
+        width: 60%;
+        margin: 100px auto 0 auto; /* margin-top reduced for navbar spacing */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+}
+.chapter-headings {
+        text-align: center;
+        width: 100%;
+}
+
+
+}
+
+#contact {
+        border: 2px outset #a7d8fa;
+        padding: 10px;
+        padding: 60px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        color: #e6e6e6;
+        background-color: #4040473b;
+        border-radius: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        margin-bottom: 10px;
+        margin-top: 20px;
+}
+
+.contact-box {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+}
+
+form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 600px;
+        margin: 0 auto;
+}
+input,
+textarea {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: #f9f9f9;
+}
+
+form input[type="radio"] {
+        width: auto;
+        margin-right: 10px;
+        vertical-align: middle;
+        display: inline-block;
+}
+
+form input[type="checkbox"] {
+        width: auto;
+        margin-right: 10px;
+        vertical-align: middle;
+        display: inline-block;
+}
+
+.radio-group {
+        display: inline-flex;
+        align-items: center;
+        margin-right: 20px;
+}
+.robot-checkbox {
+        display: inline-flex;
+        align-items: left;
+        justify-content: left;
+        margin-top: 10px;
+}
+
+form label {
+        font-size: 16px;
+        color: #e6e6e6;
+        display: inline-flex;
+        align-items: center;
+        margin-right: 15px;
+        margin-bottom: 0;
+}
+
+/* Table Section Styles */
+
+table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+}
+
+th,
+td {
+        padding: 12px 15px;
+        border: 1px solid #ccc;
+        text-align: left;
+        color:#32323c;
+}
+
+th {
+        background-color: #f4f4f4;
+        font-weight: bold;
+}
+td {
+        background-color: #32323c;
+        color: #fafafa;
+}
+
+.table-section {
+        border: 2px outset #a7d8fa;
+        padding: 10px;
+        padding: 20px 20px;
+        padding-top: 10px;
+        max-width: 1200px;
+        margin: 0 auto;
+        color: #e6e6e6;
+        background-color: #4040473b;
+        border-radius: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        margin-bottom: 40px;
+        margin-top: 120px;
+}
+
+.table-heading {
+        background-color: #2b6289;
+        color: #e6e6e6;
+}
+
+
+/* About Us Page Styles */
+
+.two-column-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        max-width: 1200px;
+        padding: 20px 20px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 16px;
+        background-color: #a0a0b33b;
+        box-shadow: 0 4px 8px rgba(22, 22, 22, 0.2);
+        backdrop-filter: blur(10px);
+}
+
+.column {
+        flex-basis: 48%;
+        padding: 10px;
+        margin-top: 10px;
+        width: 100%;
+                text-align: center;
+}
+.column img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        object-fit: cover;
+        margin-top: 10px;
+}
+.column p {
+        line-height: 1.6;
+}
+
+.about-section {
+        border: 2px outset #a7d8fa;
+        padding: 10px;
+        padding: 20px 20px;
+        padding-top: 10px;
+        max-width: 1200px;
+        margin: 0 auto;
+        color: #e6e6e6;
+        background-color: #4040473b;
+        border-radius: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        margin-top: 120px;
+        margin-bottom: 40px;
+}
+
+.about-section h2{
+        display: inline-block;
+        border-bottom: 4px solid #e6e6e6;
+        border-radius: 8px;
+                display: inline-block;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+}
+
+/* Call to Action Section Styles */
+.call-to-action {
+        border: 2px outset #a7d8fa;
+        padding: 10px;
+        padding: 20px 20px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        max-width: 1200px;
+        margin: 0 auto;
+        color: #e6e6e6;
+        background-color: #4040473b;
+        border-radius: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        margin-top: 40px;
+        margin-bottom: 40px;
+        text-align: center;
+}
+
+.call-to-action button {
+        max-width: 300px;
+        border: outset #a7d8fa;
+        border-radius: 8px;
+        margin-left: auto;
+        margin-right: auto;
+        display: inline-block;
+        box-sizing: content-box;
+}
+
+.call-to-action button:hover {
+        background-color: #67aee0ad;
+        color: #e6e6e6;
+        border: 2px outset #e6e6e6;
+        transform: scale(1.05);
+}
+
+/* Tours Page Styles */
+.tours {
+        border: 2px outset #a7d8fa;
+        padding: 10px;
+        padding: 20px 20px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        max-width: 1200px;
+        margin: 0 auto;
+        color: #e6e6e6;
+        background-color: #4040473b;
+        border-radius: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        margin-top: 120px;
+        margin-bottom: 40px;
+        text-align: center;
+}
+
+/* Tour Details Styles */
+.tour-details {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+}
+
+.tour-details ul {
+        color: #e6e6e6
+}
+
+.tour-details img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+/* Footer Section Styles */
+
+
+footer {
+        background-color: #1b1b1b20;
+        padding: 40px 0;
+        color: #e6e6e6;
+        max-width: 100vw;
+        width: 100%;
+}
+
+.footer-content {
+        text-align: center;
+        max-width: 1200px;
+        margin: 0 auto;
+}
+
+.footer-links {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+}
+
+.footer-links a {
+        color: #e6e6e6;
+        text-decoration: none;
+        transform: color 0.3s;
+}
+
+.footer-links a:hover {
+        color: #2b6289;
+        text-decoration: none;
+        transform: color 0.3s;
+}
+
+.footer-social {
+        margin-top: 0;
+}
+
+.footer-social a {
+        color: #e6e6e6;
+        font-size: 1.7em;
+        margin: 0 10px;
+        text-decoration: none;
+        transition: color 0.3s;
+}
+
+.footer-social a:hover {
+        color: #2b6289;
+}
