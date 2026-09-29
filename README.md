@@ -86,7 +86,7 @@ Contributions are welcome. Before opening a change:
 4. Verify that navigation, local images, and the contact form still work.
 5. Submit a pull request describing the change and how it was tested.
 
-Please keep the existing plain HTML/CSS/JavaScript/PHP approach unless a change requires otherwise. See [`LICENSE`](LICENSE) for licensing information if that file is present in your checkout.
+Please keep the existing plain HTML/CSS/JavaScript/PHP approach unless a change requires otherwise. Follow any licensing terms shown on the repository's GitHub page.
 
 ## Maintainer
 
